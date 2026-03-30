@@ -1,6 +1,5 @@
 "use strict";
 
-const PITTSBURGH_COORDS = { latitude: 40.4406, longitude: -79.9959 };
 const WEATHER_URL =
   "https://api.open-meteo.com/v1/forecast?latitude=40.4406&longitude=-79.9959&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,precipitation&daily=temperature_2m_max,temperature_2m_min,weather_code&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York";
 
@@ -160,9 +159,7 @@ async function loadWeather() {
     const current = weatherData.current;
     state.weatherOutfit = mapWeatherToOutfit(current);
 
-    dom.weatherMeta.textContent = `Pittsburgh, PA (${PITTSBURGH_COORDS.latitude.toFixed(
-      2
-    )}, ${PITTSBURGH_COORDS.longitude.toFixed(2)})`;
+    dom.weatherMeta.textContent = "Pittsburgh, PA";
     dom.weatherBadge.textContent = formatWeather(current);
     renderForecast(weatherData.daily);
 
