@@ -1,0 +1,335 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  --bg: #f6f7fb;
+  --text: #212739;
+  --muted: #5f6782;
+  --card: #ffffff;
+  --border: #dde3f4;
+  --shadow: 0 18px 45px rgba(31, 44, 88, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top right, #e5ecff 0%, #f6f7fb 45%);
+  color: var(--text);
+}
+
+.app-shell {
+  width: min(1080px, 92vw);
+  margin: 2.5rem auto 4rem;
+}
+
+.app-header {
+  margin-bottom: 1.4rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: #4b5ca5;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3.5vw, 2.35rem);
+}
+
+.subtitle {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+  line-height: 1.5;
+}
+
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1.05rem;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.card-note {
+  color: var(--muted);
+  margin: 0.55rem 0 0.95rem;
+  line-height: 1.45;
+  min-height: 1.4rem;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.secondary-btn,
+button {
+  border: 1px solid #bdc8f1;
+  background: #eef2ff;
+  color: #2f4280;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.45rem 0.72rem;
+  cursor: pointer;
+}
+
+button:hover,
+.secondary-btn:hover {
+  background: #e0e8ff;
+}
+
+.season-scene {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  min-height: 260px;
+  padding: 0.9rem;
+  overflow: hidden;
+}
+
+.season-spring {
+  background: linear-gradient(165deg, #f3ffe5 0%, #d8f6ff 50%, #f7e8ff 100%);
+}
+
+.season-summer {
+  background: linear-gradient(165deg, #fffdc8 0%, #cbeeff 52%, #f8ffc6 100%);
+}
+
+.season-autumn {
+  background: linear-gradient(165deg, #ffe1bf 0%, #f8c8b8 56%, #f8f4ce 100%);
+}
+
+.season-winter {
+  background: linear-gradient(165deg, #edf5ff 0%, #cfe2ff 45%, #f0f4ff 100%);
+}
+
+.season-badge,
+.weather-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.24rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  backdrop-filter: blur(2px);
+}
+
+.season-badge {
+  background: rgba(255, 255, 255, 0.74);
+  color: #304078;
+  border: 1px solid rgba(156, 169, 227, 0.4);
+}
+
+.weather-badge {
+  margin-left: 0.35rem;
+  background: rgba(32, 42, 79, 0.09);
+  border: 1px solid rgba(32, 42, 79, 0.13);
+  color: #1f2a4f;
+}
+
+.scene-decor {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.75rem;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.bear {
+  margin: 1.9rem auto 0;
+  width: 215px;
+  text-align: center;
+  position: relative;
+}
+
+.ear {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #8b5e3c;
+  border: 3px solid #6d472b;
+  top: 0;
+}
+
+.ear-left {
+  left: 34px;
+}
+
+.ear-right {
+  right: 34px;
+}
+
+.face {
+  width: 150px;
+  height: 132px;
+  margin: 14px auto 0;
+  border-radius: 44% 44% 46% 46%;
+  background: #9f7049;
+  border: 4px solid #6d472b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.nose {
+  position: absolute;
+  bottom: 34px;
+  font-size: 1.35rem;
+}
+
+.bear-body {
+  margin: -4px auto 0;
+  width: 178px;
+  min-height: 90px;
+  padding: 0.75rem 0.75rem 0.7rem;
+  border-radius: 40px;
+  border: 4px solid #6d472b;
+  background: #a87850;
+}
+
+.outfit-emoji {
+  font-size: 1.58rem;
+}
+
+.outfit-label {
+  margin: 0.38rem 0 0;
+  font-size: 0.91rem;
+  font-weight: 700;
+}
+
+.mood-line {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: #283968;
+  font-weight: 600;
+}
+
+.forecast-list {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.forecast-list li {
+  border: 1px solid #d7e1fb;
+  background: #f9fbff;
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.control-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+select,
+input[type="url"] {
+  width: 100%;
+  border: 1px solid #c8d4f5;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.62rem;
+  font-size: 0.9rem;
+}
+
+.switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.switch-label input {
+  width: 16px;
+  height: 16px;
+}
+
+.spotify-url-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.spotify-url-row input {
+  flex: 1;
+}
+
+.inline-error {
+  min-height: 1.1rem;
+  margin: 0.45rem 0 0;
+  color: #ac1f50;
+  font-size: 0.84rem;
+}
+
+.spotify-player-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #d4def9;
+  background: #f6f8ff;
+}
+
+#spotifyEmbed {
+  width: 100%;
+  min-height: 352px;
+  border: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #e3e8f7;
+  margin: 1rem 0;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    width: min(660px, 94vw);
+    margin-top: 1.2rem;
+  }
+
+  .season-scene {
+    min-height: 230px;
+  }
+
+  .bear {
+    transform: scale(0.93);
+    transform-origin: top center;
+    margin-top: 1.4rem;
+  }
+}
