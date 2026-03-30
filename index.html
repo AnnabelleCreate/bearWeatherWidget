@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pittsburgh Weather Bear Widget</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <p class="eyebrow">Portfolio Widget</p>
+        <h1>Pittsburgh Weather Bear</h1>
+        <p class="subtitle">
+          A cozy bear that changes outfits based on Pittsburgh weather, with a
+          customizable music corner powered by Spotify embeds.
+        </p>
+      </header>
+
+      <section class="widget-grid">
+        <article class="card weather-card" aria-labelledby="weather-widget-title">
+          <div class="card-title-row">
+            <h2 id="weather-widget-title">Live Weather Outfit</h2>
+            <button id="refreshWeatherBtn" type="button" class="secondary-btn">
+              Refresh
+            </button>
+          </div>
+          <p class="card-note" id="weatherMeta">Loading Pittsburgh weather...</p>
+
+          <div id="seasonScene" class="season-scene season-spring">
+            <div class="season-badge" id="seasonBadge">Spring</div>
+            <div class="weather-badge" id="weatherBadge">Fetching weather...</div>
+
+            <div id="sceneDecor" class="scene-decor">🌸 🌿 🌸</div>
+
+            <div class="bear" id="bear">
+              <div class="ear ear-left"></div>
+              <div class="ear ear-right"></div>
+              <div class="face">
+                <span class="eye">•</span>
+                <span class="eye">•</span>
+                <span class="nose">◡</span>
+              </div>
+              <div class="bear-body">
+                <span id="outfitEmoji" class="outfit-emoji" aria-hidden="true"
+                  >🧥</span
+                >
+                <p id="outfitLabel" class="outfit-label">Rain jacket + boots</p>
+              </div>
+              <p class="mood-line" id="moodLine">Grabbing an umbrella today!</p>
+            </div>
+          </div>
+
+          <ul class="forecast-list" id="forecastList" aria-live="polite"></ul>
+        </article>
+
+        <article class="card controls-card" aria-labelledby="controls-widget-title">
+          <h2 id="controls-widget-title">Bear Closet + Music Player</h2>
+          <p class="card-note">
+            Switch the outfit manually and choose what your bear listens to.
+          </p>
+
+          <div class="control-group">
+            <label class="switch-label">
+              <input id="autoOutfitToggle" type="checkbox" checked />
+              <span>Use auto outfit from weather</span>
+            </label>
+          </div>
+
+          <div class="control-group">
+            <label for="manualOutfitSelect">Manual outfit</label>
+            <select id="manualOutfitSelect">
+              <option value="rain">Rain jacket + boots</option>
+              <option value="snow">Puffer coat + beanie + scarf</option>
+              <option value="cold">Warm sweater + scarf</option>
+              <option value="windy">Windbreaker</option>
+              <option value="sunny">Sun hat + light tee</option>
+              <option value="hot">Tank top + shades</option>
+              <option value="cloudy">Comfy hoodie</option>
+            </select>
+          </div>
+
+          <hr />
+
+          <div class="control-group">
+            <label for="spotifyPresetSelect">Spotify vibe</label>
+            <select id="spotifyPresetSelect">
+              <option value="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator">
+                Morning sunshine
+              </option>
+              <option value="https://open.spotify.com/embed/track/4uLU6hMCjMI75M1A2tKUQC?utm_source=generator">
+                Playful mood
+              </option>
+              <option value="https://open.spotify.com/embed/track/2WfaOiMkCvy7F5fcp2zZ8L?utm_source=generator">
+                Breezy throwback
+              </option>
+              <option value="https://open.spotify.com/embed/track/7ouMYWpwJ422jRcDASZB7P?utm_source=generator">
+                Night walk
+              </option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="spotifyUrlInput">Or paste a Spotify track/album/playlist URL</label>
+            <div class="spotify-url-row">
+              <input
+                id="spotifyUrlInput"
+                type="url"
+                placeholder="https://open.spotify.com/track/..."
+              />
+              <button id="applySpotifyUrlBtn" type="button">Use URL</button>
+            </div>
+            <p id="spotifyUrlError" class="inline-error" role="alert"></p>
+          </div>
+
+          <div class="spotify-player-wrap">
+            <iframe
+              id="spotifyEmbed"
+              title="Bear music player"
+              src="https://open.spotify.com/embed/track/6dGnYIeXmHdcikdzNNDMm2?utm_source=generator"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            ></iframe>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
